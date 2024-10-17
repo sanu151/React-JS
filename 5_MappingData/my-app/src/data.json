@@ -1,0 +1,72 @@
+[
+  {
+    "studentId": 1,
+    "name": "John Doe",
+    "math": 85,
+    "science": 92,
+    "english": 78
+  },
+  {
+    "studentId": 2,
+    "name": "Jane Smith",
+    "math": 90,
+    "science": 88,
+    "english": 95
+  },
+  {
+    "studentId": 3,
+    "name": "Alice Johnson",
+    "math": 20,
+    "science": 23,
+    "english": 28
+  },
+  {
+    "studentId": 4,
+    "name": "Bob Williams",
+    "math": 92,
+    "science": 95,
+    "english": 88
+  },
+  {
+    "studentId": 5,
+    "name": "Eve Brown",
+    "math": 88,
+    "science": 75,
+    "english": 90
+  },
+  {
+    "studentId": 6,
+    "name": "Frank Davis",
+    "math": 78,
+    "science": 82,
+    "english": 95
+  },
+  {
+    "studentId": 7,
+    "name": "Grace Lee",
+    "math": 95,
+    "science": 90,
+    "english": 88
+  },
+  {
+    "studentId": 8,
+    "name": "Henry Martin",
+    "math": 82,
+    "science": 75,
+    "english": 90
+  },
+  {
+    "studentId": 9,
+    "name": "Ivy Baker",
+    "math": 90,
+    "science": 88,
+    "english": 95
+  },
+  {
+    "studentId": 10,
+    "name": "Jack Carter",
+    "math": 75,
+    "science": 80,
+    "english": 82
+  }
+]

@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.heading-title {
+  background-color: purple;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+}
+
+.card-div {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: cadetblue;
+}
+
+.card {
+  background-color: bisque;
+  box-shadow: 2px 4px 4px red;
+  display: inline-block;
+  text-align: center;
+  padding: 1rem;
+  margin: 1rem;
+  width: 390px;
+}
+
+.card-title {
+  color: brown;
+  padding: 0.5rem;
+}
+
+.card-desc {
+  color: blue;
+  padding: 0.5rem;
+}
+
+.card-footer {
+  background-color: black;
+  color: yellow;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+}
