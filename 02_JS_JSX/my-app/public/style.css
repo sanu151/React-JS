@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.desc-para {
+  background-color: brown;
+  color: white;
+  text-align: justify;
+  padding: 1rem;
+}
+
+.date-para {
+  font-size: 1.5rem;
+  padding: 1rem;
+  font-weight: bold;
+  text-decoration: underline;
+}
