@@ -1,0 +1,35 @@
+[
+  {
+    "fullName": "Supriyo Das",
+    "age": 36,
+    "gender": "male",
+    "phone": [
+      {
+        "home": "9932562329",
+        "office": "7980021002"
+      }
+    ]
+  },
+  {
+    "fullName": "Rupa Das",
+    "age": 26,
+    "gender": "female",
+    "phone": [
+      {
+        "home": "8967564312",
+        "office": "6004345474"
+      }
+    ]
+  },
+  {
+    "fullName": "Rishika Das",
+    "age": 6,
+    "gender": "female",
+    "phone": [
+      {
+        "home": "1234567890",
+        "office": "0987654321"
+      }
+    ]
+  }
+]
