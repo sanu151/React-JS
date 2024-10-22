@@ -908,3 +908,72 @@ By understanding state, `setState`, and event handlers, you can build powerful a
 - Always ensure that your conditional rendering logic is clear and well-structured for maintainability.
 
 By effectively utilizing ternary operators and short-circuit evaluation, you can create dynamic and engaging React applications that adapt to different conditions and user interactions.
+
+
+## Event Handlers
+
+- **User Interactions:** Event handlers are functions that are called in response to user interactions with HTML elements.
+- **Event Objects:** Event handlers typically receive an event object as an argument, which contains information about the event, such as the target element, event type, and additional properties.
+- **Common Event Types:**
+  - `onClick`: Triggered when an element is clicked.
+  - `onChange`: Triggered when the value of an input element changes.
+  - `onSubmit`: Triggered when a form is submitted.
+  - `onKeyDown`, `onKeyPress`, `onKeyUp`: Triggered when a key is pressed, released, or pressed and released.
+  - `onFocus`, `onBlur`: Triggered when an element gains or loses focus.
+  - `onMouseOver`, `onMouseOut`: Triggered when the mouse pointer enters or leaves an element.
+
+**`onChange` Event Handler:**
+
+- **Purpose:** Used to handle changes in input elements, such as text fields, checkboxes, and select boxes.
+- **Event Object:** The `onChange` event handler receives an event object with a `target` property, which contains information about the input element.
+- **Value Access:** To access the new value of the input element, use `event.target.value`.
+
+**Example:**
+
+```jsx
+function MyComponent() {
+  const [inputValue, setInputValue] = useState('');
+
+  const handleChange = (event) => {
+    setInputValue(event.target.value);
+  };
+
+  return (
+    <div>
+      <input type="text" value={inputValue} onChange={handleChange} />
+      <p>Input value: {inputValue}</p>
+    </div>
+  );
+}
+```
+
+**`onClick` Event Handler:**
+
+- **Purpose:** Used to handle click events on elements.
+- **Event Object:** The `onClick` event handler receives an event object, which can be used to prevent default behavior or access information about the clicked element.
+
+**Example:**
+
+```jsx
+function MyComponent() {
+  const handleClick = (event) => {
+    event.preventDefault(); // Prevent default form submission behavior
+    console.log('Button clicked!');
+  };
+
+  return (
+    <form onSubmit={handleClick}>
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+```
+
+**Key Points:**
+
+- Event handlers are essential for creating interactive and responsive user interfaces.
+- Choose the appropriate event handler based on the type of user interaction you want to handle.
+- Use the `event.target` property to access information about the element that triggered the event.
+- Consider using event delegation to handle events on multiple elements efficiently.
+
+By effectively using event handlers, you can create engaging and interactive React applications that respond to user input.
