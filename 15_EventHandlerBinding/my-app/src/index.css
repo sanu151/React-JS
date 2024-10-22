@@ -1,0 +1,13 @@
+:root {
+  background-color: blanchedalmond;
+}
+
+button {
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  background-color: brown;
+  color: bisque;
+  border-radius: 0.5rem;
+  margin: 1rem;
+}
