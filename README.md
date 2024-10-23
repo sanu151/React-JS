@@ -1120,3 +1120,49 @@ In this example:
 - For more complex state management scenarios, consider using a state management library like Redux or Zustand.
 
 By effectively using the `setState` callback function, you can create dynamic and responsive React components that update state based on previous values and handle complex scenarios.
+
+
+**Event Bubbling:**
+
+- **Propagation:** Event bubbling refers to the propagation of events from the innermost element to the outermost element in the DOM hierarchy.
+- **Default Behavior:** By default, events bubble up through the DOM tree, allowing parent elements to handle events that originate from child elements.
+
+**`stopPropagation` Method:**
+
+- **Preventing Bubbling:** The `stopPropagation` method is used to prevent an event from propagating to parent elements.
+- **Targeted Handling:** This is useful when you want to handle an event at a specific level of the DOM hierarchy and prevent it from affecting other elements.
+
+**Example:**
+
+```jsx
+function MyComponent() {
+  const handleClick = (event) => {
+    console.log('Button clicked');
+    event.stopPropagation(); // Prevent event from bubbling up
+  };
+
+  return (
+    <div onClick={() => console.log('Div clicked')}>
+      <button onClick={handleClick}>Click me</button>
+    </div>
+  );
+}
+```
+
+In this example:
+
+- Clicking the button triggers both the `handleClick` function and the `onClick` handler on the parent `div` element.
+- Calling `event.stopPropagation()` in the `handleClick` function prevents the event from bubbling up to the `div`, so only the button's click event is handled.
+
+**Key Points:**
+
+- Event bubbling is the default behavior in the DOM.
+- Use `stopPropagation` to prevent events from propagating to parent elements.
+- This can be useful for targeted event handling and preventing unwanted side effects.
+
+**Additional Considerations:**
+
+- If you want to capture an event at a specific element without preventing bubbling, use `event.preventDefault()` to prevent the browser's default behavior.
+- For more complex event handling scenarios, consider using event delegation to attach event listeners to a single parent element and handle events for multiple child elements.
+
+By understanding event bubbling and using `stopPropagation` appropriately, you can effectively control the flow of events in your React applications and create more targeted and responsive user interfaces.
