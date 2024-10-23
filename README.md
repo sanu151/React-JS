@@ -1073,3 +1073,50 @@ In this example:
 - Use the `useReducer` hook for more complex state management scenarios.
 
 By effectively using the `useState` hook, you can create dynamic and interactive React components that manage state efficiently and declaratively.
+
+#### Updating State Based on Previous State
+
+- **`setState` Callback:** The `setState` method accepts an optional callback function as its second argument. This callback receives the previous state as an argument, allowing you to update the state based on its current value.
+- **Functional Approach:** Using a callback function promotes immutability and avoids potential side effects.
+
+**Example:**
+
+```jsx
+import React, { useState } from 'react';
+
+function MyComponent() {
+  const [count, setCount] = useState(0);
+
+  const increment = () => {
+    setCount((prevCount) => prevCount + 1);
+  };
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={increment}>Increment</button>
+    </div>
+  );
+}
+
+export default MyComponent;
+```
+
+In this example:
+
+- The `increment` function uses a callback passed to `setCount` to update the `count` state.
+- The callback receives the previous `count` value (`prevCount`) as an argument.
+- The new `count` value is calculated by adding 1 to the previous value.
+
+**Key Points:**
+
+- Always use the callback function provided by `setState` to update state based on the previous state.
+- This approach ensures that your state updates are consistent and avoids potential race conditions.
+- For more complex state updates, you can use multiple `setState` calls or custom logic within the callback function.
+
+**Additional Considerations:**
+
+- If you need to perform asynchronous operations before updating the state, you can use `useEffect` with a dependency array to handle cleanup and re-rendering.
+- For more complex state management scenarios, consider using a state management library like Redux or Zustand.
+
+By effectively using the `setState` callback function, you can create dynamic and responsive React components that update state based on previous values and handle complex scenarios.
