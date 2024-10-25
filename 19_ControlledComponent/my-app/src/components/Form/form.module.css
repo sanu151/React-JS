@@ -1,0 +1,17 @@
+.formGroup {
+  margin-top: 1rem;
+  display: flex;
+  width: 20rem;
+
+  label {
+    width: 6rem;
+  }
+  input {
+    width: 14rem;
+  }
+
+  button {
+    width: 100%;
+    background-color: darkcyan;
+  }
+}
