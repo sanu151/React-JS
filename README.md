@@ -1166,3 +1166,65 @@ In this example:
 - For more complex event handling scenarios, consider using event delegation to attach event listeners to a single parent element and handle events for multiple child elements.
 
 By understanding event bubbling and using `stopPropagation` appropriately, you can effectively control the flow of events in your React applications and create more targeted and responsive user interfaces.
+
+## Controlled Components | Collect Form Data
+**Controlled Components:**
+
+- **Managed by State:** Controlled components are React components where the input values are managed by the component's state. This allows you to control the input values and perform actions based on their changes.
+- **Controlled Inputs:** Controlled inputs are input elements (e.g., `<input>`, `<textarea>`, `<select>`) whose values are controlled by the component's state.
+
+**Collecting Form Data:**
+
+1. **Initialize State:** Create state variables to store the values of the form inputs.
+2. **Handle Changes:** Use event handlers like `onChange` to update the state when the input values change.
+3. **Access Form Data:** Access the form data from the state after the user submits the form.
+
+**Example:**
+
+```jsx
+import React, { useState } from 'react';
+
+function MyForm() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Prevent default form submission behavior
+    console.log('Form submitted:', { name, email });
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        Name:
+        <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+      </label>
+      <br />
+      <label>
+        Email:
+        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+      </label>
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+
+export default MyForm;
+```
+
+In this example:
+
+- The `name` and `email` states are initialized to empty strings.
+- The `handleSubmit` function is called when the form is submitted.
+- The `onChange` event handlers update the `name` and `email` states when the input values change.
+- The submitted form data is logged to the console.
+
+**Key Points:**
+
+- Controlled components provide greater control over form input values and allow for more complex validation and interactions.
+- Always use `event.preventDefault()` to prevent the default form submission behavior if you want to handle form submission manually.
+- You can use additional state variables to store other form data or validation errors.
+- For more complex forms, consider using a form library like Formik or React Hook Form.
+
+By following these steps and understanding the concepts of controlled components and form data collection, you can effectively create forms in React that capture user input and perform actions based on the submitted data.
