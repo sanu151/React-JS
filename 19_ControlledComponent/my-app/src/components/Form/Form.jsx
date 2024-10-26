@@ -14,9 +14,6 @@ const Form = () => {
       password,
     };
     console.log(userInfo);
-    setName("");
-    setEmail("");
-    setPassword("");
   };
 
   const handleNameChange = (event) => {
