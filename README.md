@@ -1288,3 +1288,88 @@ export default MyComponent;
 - For more complex state updates, consider using libraries like Redux or Zustand.
 
 By following these guidelines, you can effectively manage object state in React and create dynamic and interactive user interfaces.
+
+## Pass data from a child component to a parent component in React:
+
+**1. Callback Functions:**
+
+- **Child Component:** Define a callback function as a prop and pass it to the child component.
+- **Child Component:** Call the callback function from the child component, passing the desired data as an argument.
+- **Parent Component:** Handle the data received from the callback function and update the parent's state or perform other actions.
+
+**Example:**
+
+```javascript
+// Child Component
+function ChildComponent(props) {
+  const handleClick = () => {
+    props.onDataReceived('Data from child');
+  };
+
+  return (
+    <button onClick={handleClick}>Send Data</button>
+  );
+}
+
+// Parent Component
+function ParentComponent() {
+  const [data, setData] = useState('');
+
+  const handleData = (data) => {
+    setData(data);
+  };
+
+  return (
+    <div>
+      <ChildComponent onDataReceived={handleData} />
+      <p>{data}</p>
+    </div>
+  );
+}
+```
+
+**2. Context API:**
+
+- **Create a Context:** Define a context with the data you want to share.
+- **Provide Context:** Wrap the child components that need access to the data with the `Context.Provider`.
+- **Consume Context:** Use the `useContext` hook in the child components to access the data from the context.
+
+**Example:**
+
+```javascript
+// Context
+const DataContext = createContext();
+
+// Parent Component
+function ParentComponent() {
+  const [data, setData] = useState('Data from parent');
+
+  return (
+    <DataContext.Provider value={data}>
+      <ChildComponent />
+    </DataContext.Provider>
+  );
+}
+
+// Child Component
+function ChildComponent() {
+  const data = useContext(DataContext);
+
+  return (
+    <p>{data}</p>
+  );
+}
+```
+
+**Choosing the Right Method:**
+
+- Use **callback functions** for simple data passing between components.
+- Use **Context API** for sharing data across multiple levels of components without prop drilling, especially for global state or data that needs to be accessed by many components.
+
+**Key Points:**
+
+- Ensure that the data being passed is in the correct format and type.
+- Consider performance implications, especially when using Context API for large amounts of data.
+- For complex data structures or frequent updates, using a state management library like Redux or Zustand might be more suitable.
+
+By understanding these methods, you can effectively pass data between components in your React applications, creating more dynamic and interactive user experiences.
