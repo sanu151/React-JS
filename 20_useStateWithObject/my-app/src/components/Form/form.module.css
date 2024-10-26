@@ -1,0 +1,22 @@
+form {
+  padding: 1rem;
+  box-shadow: 2px 2px 4px white;
+}
+.formGroup {
+  display: flex;
+  width: 20rem;
+  margin-top: 0.6rem;
+
+  label {
+    width: 6rem;
+  }
+  input {
+    width: 14rem;
+  }
+  button {
+    width: 100%;
+    background-color: cadetblue;
+    border: none;
+    padding: 0.3rem;
+  }
+}
