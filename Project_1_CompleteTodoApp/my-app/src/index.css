@@ -1,0 +1,48 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  box-sizing: border-box;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.92);
+  background-color: #4f4f4f;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f110;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+body {
+  display: flex;
+  width: 95%;
+  height: 95vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading-main {
+  text-align: center;
+  margin-bottom: 1rem;
+}

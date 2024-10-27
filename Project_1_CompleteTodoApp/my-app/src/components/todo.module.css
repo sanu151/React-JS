@@ -1,0 +1,14 @@
+.todo {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.delete-icon {
+  color: red;
+}
