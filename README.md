@@ -1376,7 +1376,8 @@ By understanding these methods, you can effectively pass data between components
 
 ### Mind Map for Passing Data to Parent-Child-Parent Elements
 
-![image](https://github.com/user-attachments/assets/21012226-077f-42be-b3c9-03ded26786e8)
+![image](https://github.com/user-attachments/assets/e807e845-e320-43ca-978f-6aae720a1f3d)
+
 
 #### Explanation of the Mind Map
 
