@@ -1,0 +1,23 @@
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: #333;
+}
+
+.form-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-evenly;
+}
+
+.btn {
+  width: 200px;
+  border: none;
+  background-color: tomato;
+  font-size: 1.2rem;
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+}

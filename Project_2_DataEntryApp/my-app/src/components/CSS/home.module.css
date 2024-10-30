@@ -1,0 +1,27 @@
+.heading-text {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  justify-content: center;
+  margin: auto;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+tr {
+  width: 100%;
+  text-align: center;
+}
+
+th,
+td {
+  width: 162px;
+  border: 1px solid blue;
+}
