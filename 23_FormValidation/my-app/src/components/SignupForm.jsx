@@ -1,5 +1,6 @@
-import React from "react";
+// import React from "react";
 import { useFormik } from "formik";
+import * as yup from "yup";
 
 const SignupForm = () => {
   const formik = useFormik({
@@ -8,6 +9,20 @@ const SignupForm = () => {
       email: "",
       password: "",
     },
+    validationSchema: yup.object({
+      name: yup
+        .string()
+        .min(2, "Name must have atleast 2 character")
+        .required("Name is required"),
+      email: yup
+        .string()
+        .email("Enter valid Email")
+        .required("Email is required"),
+      password: yup
+        .string()
+        .min(6, "password must have atleast 6 character")
+        .required("Password is required"),
+    }),
     onSubmit: (values, { resetForm }) => {
       alert(
         JSON.stringify(`${values.name}, ${values.email}, ${values.password}`)
@@ -15,6 +30,16 @@ const SignupForm = () => {
       resetForm({ values: "" });
     },
   });
+
+  // console.error(formik.errors);
+  const renderNameError = formik.touched.name && formik.errors.name && (
+    <span>{formik.errors.name}</span>
+  );
+  const renderEmailError = formik.touched.email && formik.errors.email && (
+    <span>{formik.errors.email}</span>
+  );
+  const renderPasswordError = formik.touched.password &&
+    formik.errors.password && <span>{formik.errors.password}</span>;
 
   return (
     <div>
@@ -30,6 +55,7 @@ const SignupForm = () => {
             value={formik.values.name}
           />
         </div>
+        {renderNameError}
         <div>
           <label htmlFor="email">Email: </label>
           <input
@@ -40,6 +66,7 @@ const SignupForm = () => {
             value={formik.values.email}
           />
         </div>
+        {renderEmailError}
         <div>
           <label htmlFor="password">Password: </label>
           <input
@@ -50,6 +77,7 @@ const SignupForm = () => {
             value={formik.values.password}
           />
         </div>
+        {renderPasswordError}
         <div>
           <button type="submit" className="btn">
             Sign Up

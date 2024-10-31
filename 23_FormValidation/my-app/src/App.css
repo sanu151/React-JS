@@ -13,20 +13,27 @@ h2 {
 form {
   display: flex;
   flex-direction: column;
-  width: 20rem;
+  width: 40rem;
   gap: 1rem;
+  justify-content: center;
   div {
     display: flex;
-    width: 20rem;
+    width: 40rem;
+    justify-content: center;
   }
 }
 
 label {
-  width: 30%;
+  width: 5rem;
 }
 
 input {
-  width: 70%;
+  width: 15rem;
+}
+
+span {
+  margin: -1rem;
+  padding: 0;
 }
 
 .btn {
