@@ -1418,47 +1418,36 @@ npm install formik yup
 
 ```javascript
 import React from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
+import { useFormik } from 'formik';
 
-const MyForm = () => {
-  const validationSchema = Yup.object().shape({
-    name: Yup.string().required('Name is required'),
-    email: Yup.string().email('Invalid email').required('Email is required'),
-    password: Yup.string().min(6, 'Password must be at least 6 characters').required('Password is required'),
+const SignupForm = () => {
+  // Pass the useFormik() hook initial form values and a submit function that will
+  // be called when the form is submitted
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+    },
+    onSubmit: values => {
+      alert(JSON.stringify(values, null, 2));
+    },
   });
-
-  const handleSubmit = (values, { setSubmitting }) => {
-    console.log(values);
-    setSubmitting(false); // Reset form state
-  };
-
   return (
-    <Formik
-      initialValues={{
-        name: '',
-        email: '',
-        password: '',
-      }}
-      validationSchema={validationSchema}
-      onSubmit={handleSubmit}
-    >
-      {({ values, errors, touched, handleChange, handleSubmit }) => (
-        <Form>
-          <div>
-            <label htmlFor="name">Name</label>
-            <Field name="name" type="text" />
-            <ErrorMessage name="name" component="div" />
-          </div>
-          {/* Similar fields for email and password */}
-          <button type="submit">Submit</button>
-        </Form>
-      )}
-    </Formik>
+    <form onSubmit={formik.handleSubmit}>
+      <label htmlFor="email">Email Address</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        onChange={formik.handleChange}
+        value={formik.values.email}
+      />
+
+      <button type="submit">Submit</button>
+    </form>
   );
 };
 
-export default MyForm;
+export default SignupForm;
 ```
 
 **Explanation:**
