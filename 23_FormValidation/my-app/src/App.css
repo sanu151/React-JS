@@ -1,0 +1,36 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+h2 {
+  text-decoration: underline;
+  margin-bottom: 1.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  gap: 1rem;
+  div {
+    display: flex;
+    width: 20rem;
+  }
+}
+
+label {
+  width: 30%;
+}
+
+input {
+  width: 70%;
+}
+
+.btn {
+  margin: 0.6rem auto;
+  width: 50%;
+  background-color: darkseagreen;
+}
