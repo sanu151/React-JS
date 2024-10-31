@@ -1427,9 +1427,10 @@ const SignupForm = () => {
     initialValues: {
       email: '',
     },
-    onSubmit: values => {
+    onSubmit: (values, {resetForm}) => {
       alert(JSON.stringify(values, null, 2));
     },
+      resetForm({values: ""});
   });
   return (
     <form onSubmit={formik.handleSubmit}>
