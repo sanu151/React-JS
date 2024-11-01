@@ -1,5 +1,40 @@
 # React JS
 
+##Usefull Links:
+**React Packages and Libraries Cheat Sheet**
+
+| Package/Library | Description | Installation Command | Resource Link |
+|---|---|---|---|
+| **Core React** | The foundation for building user interfaces | `npx create-react-app my-app` | [https://react.dev/](https://react.dev/) |
+| **React Vite Template** | Create React+vite template | `npm create vite@latest` | [https://vite.dev/guide/](https://vite.dev/guide/) |
+| **React Router** | A routing library for building single-page applications | `npm install react-router-dom` | [https://reactrouter.com/](https://reactrouter.com/) |
+| **UUID** | A library for generating Universally Unique Identifiers | `npm install uuid` | [https://www.npmjs.com/package/uuid](https://www.google.com/url?sa=E&source=gmail&q=https://www.npmjs.com/package/uuid) |
+| **React Icons** | A collection of icons for React | `npm install react-icons` | [https://react-icons.github.io/](https://react-icons.github.io/) |
+| **React Bootstrap** | A React implementation of Bootstrap components | `npm install react-bootstrap bootstrap` | [https://react-bootstrap.github.io/](https://react-bootstrap.github.io/) |
+| **Formik** | A form library for handling form state and validation | `npm install formik yup` | [https://formik.org/](https://formik.org/) |
+| **Axios** | A promise-based HTTP client for making requests to APIs | `npm install axios` | [https://axios-http.com/](https://www.google.com/url?sa=E&source=gmail&q=https://axios-http.com/) |
+| **Redux** | A state management library for complex applications | `npm install redux react-redux` | [https://redux.js.org/](https://redux.js.org/) |
+| **React Query** | A data fetching and caching library | `npm install @tanstack/react-query` | [https://tanstack.com/query/](https://tanstack.com/query/) |
+| **React Testing Library** | A testing library for React components | `npm install @testing-library/react` | [https://testing-library.com/react/](https://testing-library.com/react/) |
+| **Material-UI** | A popular React UI framework | `npm install @mui/material @emotion/react @emotion/styled` | [https://mui.com/](https://mui.com/) |
+| **React Spring** | A library for creating physics-based animations | `npm install react-spring` | [https://www.react-spring.io/](https://www.react-spring.io/) |
+
+**Additional Tips:**
+
+  - **Create React App:** A great way to quickly set up a new React project.
+  - **State Management:** Consider using Redux or Zustand for complex state management.
+  - **Routing:** React Router is the most popular routing library for React.
+  - **Form Handling:** Formik is a powerful library for handling forms, validation, and submission.
+  - **Data Fetching:** React Query is a great choice for efficient data fetching and caching.
+  - **Testing:** Use Jest and React Testing Library for writing comprehensive tests.
+  - **Styling:** Choose between CSS-in-JS libraries like Styled-Components or Emotion, or CSS modules.
+  - **UI Libraries:** Consider using Material-UI or Ant Design for pre-built components.
+
+**Remember:** The choice of libraries and tools depends on your project's specific needs and preferences. Always stay updated with the latest trends and best practices in the React ecosystem.
+
+
+
+
 ### React with TypeScript and SASS
 
 ## Introduction to React:
