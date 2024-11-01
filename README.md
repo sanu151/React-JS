@@ -1,7 +1,7 @@
 # React JS
 
-##Usefull Links:
-**React Packages and Libraries Cheat Sheet**
+## Usefull Links:  
+**React Packages and Libraries**
 
 | Package/Library | Description | Installation Command | Resource Link |
 |---|---|---|---|
