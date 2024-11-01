@@ -1,5 +1,8 @@
 # React JS
 
+![image](https://github.com/user-attachments/assets/d7dbf70b-44ae-475d-a1a0-8a2b333a009a)
+
+
 ## Usefull Links:  
 **React Packages and Libraries**
 
@@ -32,10 +35,6 @@
 
 **Remember:** The choice of libraries and tools depends on your project's specific needs and preferences. Always stay updated with the latest trends and best practices in the React ecosystem.
 
-
-
-
-### React with TypeScript and SASS
 
 ## Introduction to React:
 
