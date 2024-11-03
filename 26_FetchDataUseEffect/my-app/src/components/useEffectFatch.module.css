@@ -1,0 +1,13 @@
+.table-row {
+  display: flex;
+  width: 900px;
+}
+.sr-no {
+  width: 80px;
+}
+.desc {
+  width: 700px;
+}
+.status {
+  width: 120px;
+}
