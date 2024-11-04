@@ -15,6 +15,7 @@
 | **React Icons** | A collection of icons for React | `npm install react-icons` | [https://react-icons.github.io/](https://react-icons.github.io/) |
 | **React Bootstrap** | A React implementation of Bootstrap components | `npm install react-bootstrap bootstrap` | [https://react-bootstrap.github.io/](https://react-bootstrap.github.io/) |
 | **Formik** | A form library for handling form state and validation | `npm install formik yup` | [https://formik.org/](https://formik.org/) |
+| **Display Notification Using react-tostify** | React Toastify is a popular library for displaying simple, customizable notifications in React applications | `npm i react-toastify` | [https://www.npmjs.com/package/react-toastify](https://www.npmjs.com/package/react-toastify) |
 | **Axios** | A promise-based HTTP client for making requests to APIs | `npm install axios` | [https://axios-http.com/](https://www.google.com/url?sa=E&source=gmail&q=https://axios-http.com/) |
 | **Redux** | A state management library for complex applications | `npm install redux react-redux` | [https://redux.js.org/](https://redux.js.org/) |
 | **React Query** | A data fetching and caching library | `npm install @tanstack/react-query` | [https://tanstack.com/query/](https://tanstack.com/query/) |
