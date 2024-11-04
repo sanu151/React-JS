@@ -1,0 +1,40 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.users {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  gap: 0.2rem;
+  justify-content: space-evenly;
+}
+
+.user {
+  background-color: rgb(235, 111, 111);
+  margin: 0.5rem;
+  padding: 0.5rem;
+  width: 220px;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.user__name {
+  color: blueviolet;
+  font-family: fantasy;
+}
+
+.user__email {
+  color: yellow;
+  background-color: black;
+  padding: 0.2rem;
+  font-weight: bold;
+}
+
+.user__phone {
+  text-decoration: none;
+  color: white;
+}
