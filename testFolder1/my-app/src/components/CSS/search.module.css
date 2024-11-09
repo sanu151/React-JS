@@ -1,0 +1,17 @@
+.inputDiv {
+  text-align: center;
+  padding: 1rem;
+}
+
+input {
+  border: none;
+  outline: none;
+  font-size: 1.1rem;
+  width: 20rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+input:focus {
+  background-color: burlywood;
+  border: 2px solid brown;
+}

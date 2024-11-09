@@ -1,0 +1,48 @@
+article {
+  display: flex;
+  flex-direction: column;
+  background-color: darkslategray;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 4px wheat;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+}
+article:hover {
+  transform: scale(1.1);
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 390px;
+  padding: 1rem;
+}
+
+.userId {
+  text-align: right;
+  color: blanchedalmond;
+}
+h2,
+h3,
+h4,
+h5 {
+  padding: 0.5rem;
+}
+p {
+  padding: 0 0.5rem;
+}
+
+h2 {
+  text-align: center;
+}
+address {
+  color: lightgrey;
+}
+
+.btnRemove {
+  margin-bottom: 1rem;
+  transition: all 0.5s;
+}
+.btnRemove:hover {
+  background-color: burlywood;
+}
