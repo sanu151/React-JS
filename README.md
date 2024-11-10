@@ -2246,3 +2246,122 @@ UserProfile.propTypes = {
 - **Best Practices:** Use PropTypes judiciously to avoid over-constraining your components. Focus on essential props and consider using default values for optional props.
 
 .
+## Lifecycle Methods of a Class Component in React
+
+A class component in React has a lifecycle, which is a series of methods that are called at specific points in the component's existence. Understanding these methods is crucial for managing state, side effects, and optimizing performance.
+
+Here are the key lifecycle methods:
+
+### Mounting Phase
+1. **constructor():**
+   - Called when the component is first created.
+   - Used to initialize the component's state.
+   - **Note:** Avoid using `this.setState()` in the constructor. Use it in `componentDidMount` instead.
+
+2. **getDerivedStateFromProps(nextProps, prevState):**
+   - Rarely used.
+   - Called before rendering, both on initial mount and subsequent updates.
+   - Can return an object to update state based on new props.
+
+3. **render():**
+   - Called to render the component's JSX.
+   - Returns the JSX representation of the component.
+
+4. **componentDidMount():**
+   - Called after the component is mounted and rendered.
+   - Used for side effects like data fetching, subscriptions, or DOM manipulations.
+
+### Updating Phase
+1. **getDerivedStateFromProps(nextProps, prevState):**
+   - Called before rendering, when the component receives new props.
+   - Can return an object to update state based on the new props.
+2. **shouldComponentUpdate(nextProps, nextState):**
+   - Called before rendering to determine if the component should re-render.
+   - Return `true` to re-render, `false` to skip re-rendering.
+3. **render():**
+   - Called to render the component's JSX.
+4. **getSnapshotBeforeUpdate(prevProps, prevState):**
+   - Called before a state update or props change.
+   - Can return a value that will be passed to `componentDidUpdate`.
+5. **componentDidUpdate(prevProps, prevState, snapshot):**
+   - Called after the component is updated.
+   - Can be used to perform side effects based on state or prop changes.
+   - The `snapshot` argument is the value returned from `getSnapshotBeforeUpdate`.
+
+### Unmounting Phase
+1. **componentWillUnmount():**
+   - Called before the component is unmounted from the DOM.
+   - Used to clean up side effects, such as canceling timers, unsubscribing from events, or removing DOM elements.
+
+```JavaScript
+import React, { Component } from 'react';
+
+class LifecycleDemo extends Component {
+  constructor(props) {
+    super(props);
+    console.log('Constructor called');
+    this.state = {
+      count: 0,
+    };
+  }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    console.log('getDerivedStateFromProps called');
+    // Optional logic to update state based on new props
+    return null;
+  }
+
+  componentDidMount() {
+    console.log('componentDidMount called');
+    // Perform side effects like data fetching, subscriptions, or DOM manipulations
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log('shouldComponentUpdate called');
+    // Optional optimization: return false to prevent re-rendering
+    return true;
+  }
+
+  getSnapshotBeforeUpdate(prevProps, prevState) {
+    console.log('getSnapshotBeforeUpdate called');
+    // Capture some data before the update
+    return {
+      prevCount: prevState.count,
+    };
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    console.log('componentDidUpdate called');
+    console.log('Previous count:', snapshot.prevCount);
+    // Perform side effects based on the previous state and props
+  }
+
+  componentWillUnmount() {
+    console.log('componentWillUnmount called');
+    // Clean up any side effects
+  }
+
+  handleClick = () => {
+    this.setState({ count: this.state.count + 1 });
+  };
+
+  render() {
+    console.log('render called');
+    return (
+      <div>
+        <p>Count: {this.state.count}</p>
+        <button onClick={this.handleClick}>Increment</button>
+      </div>
+    );
+  }
+}
+
+export default LifecycleDemo;
+```
+
+**Note:**
+
+- Class components are gradually being replaced by functional components and hooks in modern React development.
+- The `shouldComponentUpdate` method is often used to optimize performance by preventing unnecessary re-renders.
+- The `getDerivedStateFromProps` method is less commonly used and can be replaced by using `useEffect` hook in functional components.
+
