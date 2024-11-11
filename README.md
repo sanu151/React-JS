@@ -2424,3 +2424,55 @@ export default MyComponent;
 - **Imperative Approach:** While refs can be useful, they often indicate a more imperative approach to state management. Try to use declarative techniques and state management libraries like Redux or Context API whenever possible.
 - **Side Effects:** Be cautious when using refs to manipulate the DOM directly, as it can lead to side effects and make your components harder to test.
 
+## useRef Hook in React
+
+The `useRef` hook in React is used to create a mutable reference object. This reference object can be used to persist values across renders, access DOM elements, or create callbacks that are stable across renders.
+
+**Basic Usage:**
+
+```javascript
+import React, { useRef } from 'react';
+
+function MyComponent() {
+  const inputRef = useRef(null);
+
+  const handleClick = () => {
+    inputRef.current.focus();
+  };
+
+  return (
+    <div>
+      <input ref={inputRef} type="text" />
+      <button onClick={handleClick}>Focus Input</button>
+    </div>
+  );
+}
+```
+
+**Key Points:**
+
+- **Creating a Ref:**
+  - `useRef` returns an object with a `current` property.
+  - The initial value can be provided as an argument to `useRef`.
+- **Accessing the Ref:**
+  - The `current` property can be accessed to get the reference to the DOM element or any other value.
+- **Persistence Across Renders:**
+  - The `current` property persists across renders, making it useful for scenarios where you need to access a value or DOM element that changes over time.
+- **Avoiding Unnecessary Re-renders:**
+  - By using `useRef`, you can create stable callbacks that don't trigger re-renders when their dependencies change. This can improve performance.
+
+**Common Use Cases:**
+
+- **Accessing DOM Elements:**
+  - Focusing input elements, scrolling to specific elements, or triggering custom DOM manipulations.
+- **Creating Stable Callbacks:**
+  - Creating callbacks that don't change on every render, preventing unnecessary re-renders.
+- **Storing Mutable Values:**
+  - Storing values that need to persist across renders, such as previous state values or configuration settings.
+
+**Remember:**
+
+- Use `useRef` judiciously. Excessive use can lead to performance issues and make your code harder to understand.
+- Prioritize declarative approaches and state management solutions like `useState` and `useReducer` whenever possible.
+- If you need to access a DOM element, consider using a library like `react-dom/client` to directly access the DOM node.
+
