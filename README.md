@@ -2365,3 +2365,62 @@ export default LifecycleDemo;
 - The `shouldComponentUpdate` method is often used to optimize performance by preventing unnecessary re-renders.
 - The `getDerivedStateFromProps` method is less commonly used and can be replaced by using `useEffect` hook in functional components.
 
+## Using `ref` in Class Components
+
+**Understanding `ref`**
+
+In React, `ref` is a mechanism to access a DOM node or a React component instance. It's often used to:
+
+- **Manipulate DOM nodes directly:** For example, to focus an input element or scroll to a specific element.
+- **Trigger custom actions:** To call custom methods on a component instance.
+- **Pass references to child components:** To allow child components to communicate with their parent.
+
+**Using `ref` in Class Components:**
+
+1. **Creating a Ref:**
+   - Create a ref using `React.createRef()`.
+   - Assign it to the `ref` attribute of the DOM element or component.
+
+2. **Accessing the Ref:**
+   - Use the `current` property of the ref to access the DOM node or component instance.
+
+**Example:**
+
+```javascript
+import React, { Component, createRef } from 'react';
+
+class MyComponent extends Component {
+  inputRef = createRef();
+
+  handleClick = () => {
+    this.inputRef.current.focus();
+  };
+
+  render() {
+    return (
+      <div>
+        <input type="text" ref={this.inputRef} />
+        <button onClick={this.handleClick}>Focus Input</button>
+      </div>
+    );
+  }
+}
+
+export default MyComponent;
+```
+
+**Explanation:**
+
+1. **Creating a Ref:**
+   - `createRef()` is used to create a ref object.
+   - The `ref` is assigned to the `input` element.
+2. **Accessing the Ref:**
+   - In the `handleClick` function, `this.inputRef.current` is used to access the DOM node of the input element.
+   - The `focus()` method is called on the DOM node to focus it.
+
+**Important Considerations:**
+
+- **Functional Components:** In functional components, use the `useRef` hook to create refs.
+- **Imperative Approach:** While refs can be useful, they often indicate a more imperative approach to state management. Try to use declarative techniques and state management libraries like Redux or Context API whenever possible.
+- **Side Effects:** Be cautious when using refs to manipulate the DOM directly, as it can lead to side effects and make your components harder to test.
+
