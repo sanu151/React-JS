@@ -2548,13 +2548,8 @@ const reducer = (state, action) => {
 
 Prop drilling is a common anti-pattern in React where props are passed down through multiple levels of components to reach a component that needs them. This can lead to complex and tightly coupled component hierarchies, making it difficult to maintain and test.
 
-<style>
-.image-300 {
-    width: 300px;
-    height: 300px;
-}
-</style>
-<img src="https://github.com/user-attachments/assets/0f597e56-d641-4752-b269-4a421c49bffe" class="image-300" alt="Prop Drilling">
+
+<img src="https://github.com/user-attachments/assets/0f597e56-d641-4752-b269-4a421c49bffe" width="300px" height="300px" alt="Prop Drilling">
 
 
 **Example of Prop Drilling:**
