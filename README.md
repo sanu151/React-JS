@@ -2542,3 +2542,64 @@ const reducer = (state, action) => {
 - When you need to perform complex state updates based on different actions.
 - When you want to centralize state management in a single location.
 
+## Prop Drilling: A Common Challenge in React
+
+**What is Prop Drilling?**
+
+Prop drilling is a common anti-pattern in React where props are passed down through multiple levels of components to reach a component that needs them. This can lead to complex and tightly coupled component hierarchies, making it difficult to maintain and test.
+
+**Example of Prop Drilling:**
+
+```javascript
+// ParentComponent.js
+function ParentComponent() {
+  const [data, setData] = useState(null);
+
+  return (
+    <ChildComponent1 data={data} />
+  );
+}
+
+// ChildComponent1.js
+function ChildComponent1({ data }) {
+  return (
+    <ChildComponent2 data={data} />
+  );
+}
+
+// ChildComponent2.js
+function ChildComponent2({ data }) {
+  // Use data here
+  return (
+    <div>{data}</div>
+  );
+}
+```
+
+In this example, the `data` prop is drilled down from `ParentComponent` to `ChildComponent2`, even though `ChildComponent2` might not directly need the data from `ParentComponent`.
+
+**Problems with Prop Drilling:**
+
+- **Tight Coupling:** Components become tightly coupled, making them harder to reuse and test independently.
+- **Complex Component Hierarchies:** Prop drilling can lead to complex component structures, especially when multiple props need to be passed down.
+- **Readability:** Excessive prop passing can make code less readable and harder to understand.
+
+**Solutions to Prop Drilling:**
+
+1. **Context API:**
+   - Use the Context API to share data across multiple components without explicitly passing props.
+   - However, be cautious with overuse, as it can make state management more complex.
+
+2. **Redux:**
+   - A powerful state management library for managing global state in React applications.
+   - It helps avoid prop drilling by providing a centralized store for application state.
+
+3. **Render Props:**
+   - A technique where a component renders a function as a child.
+   - This function can receive props and return JSX, effectively sharing data without explicit prop drilling.
+
+4. **Higher-Order Components (HOCs):**
+   - A function that takes a component and returns a new, enhanced component.
+   - HOCs can be used to share data and behavior across multiple components.
+
+By understanding the problems associated with prop drilling and employing these techniques, you can create more modular, reusable, and maintainable React applications.
