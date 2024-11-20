@@ -2606,4 +2606,69 @@ In this example, the `data` prop is drilled down from `ParentComponent` to `Chil
    - A function that takes a component and returns a new, enhanced component.
    - HOCs can be used to share data and behavior across multiple components.
 
-By understanding the problems associated with prop drilling and employing these techniques, you can create more modular, reusable, and maintainable React applications.
+## The `useContext` Hook in React
+
+**Understanding `useContext`**
+
+The `useContext` hook is a built-in React hook that allows you to access the context value from a context provider. It's a way to share data across components without explicitly passing props down through the component tree. 
+
+**Creating a Context:**
+
+1. **Create a Context:**
+   ```javascript
+   import { createContext, useContext } from 'react';
+
+   const MyContext = createContext();
+   ```
+
+2. **Provide the Context:**
+   - Wrap your application or a specific part of it with the `MyContext.Provider` component.
+   - Pass the desired value as the `value` prop to the provider.
+
+   ```javascript
+   import MyContext from './MyContext';
+
+   function App() {
+       const value = { name: 'Alice', age: 30 };
+
+       return (
+           <MyContext.Provider value={value}>
+               {/* Your app components */}
+           </MyContext.Provider>
+       );
+   }
+   ```
+
+3. **Consume the Context:**
+   - Use the `useContext` hook to access the context value within a component.
+
+   ```javascript
+   import { useContext } from 'react';
+   import MyContext from './MyContext';
+
+   function MyComponent() {
+       const contextValue = useContext(MyContext);
+
+       return (
+           <div>
+               <p>Name: {contextValue.name}</p>
+               <p>Age: {contextValue.age}</p>
+           </div>
+       );
+   }
+   ```
+
+**Key Points:**
+
+- **Context Hierarchy:** The context value is accessible to all components within the provider's scope.
+- **Performance Considerations:** Using context too extensively can lead to performance issues. Use it judiciously.
+- **Complex State Management:** For complex state management, consider using Redux or other state management libraries.
+- **Avoiding Overuse:** Context is best suited for global state that needs to be shared across many components. Avoid overusing it for smaller, localized state.
+
+**When to Use `useContext`:**
+
+- **Global State:** Sharing data that needs to be accessible throughout your application.
+- **Theming:** Providing a theme or color scheme to multiple components.
+- **Authentication:** Sharing authentication information like user data and tokens.
+- **Language Context:** Managing language preferences.
+
