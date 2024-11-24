@@ -1,22 +1,5 @@
 export const initialState = {
-  students: [
-    {
-      id: 1,
-      name: "Supriyo Das",
-      gender: "male",
-      cls: 5,
-      sec: "A",
-      roll: 202405010001,
-    },
-    {
-      id: 2,
-      name: "Rupa Das",
-      gender: "female",
-      cls: 5,
-      sec: "A",
-      roll: 202405010002,
-    },
-  ],
+  students: [],
 };
 
 export const reducer = (state, action) => {
