@@ -2612,6 +2612,8 @@ In this example, the `data` prop is drilled down from `ParentComponent` to `Chil
 
 The `useContext` hook is a built-in React hook that allows you to access the context value from a context provider. It's a way to share data across components without explicitly passing props down through the component tree. 
 
+### Create a Context -> Provide the Context -> Consume the Context
+
 **Creating a Context:**
 
 1. **Create a Context:**
