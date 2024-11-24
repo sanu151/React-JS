@@ -20,7 +20,7 @@ const NewStudent = () => {
       sec: secRef.current.value.toUpperCase(),
       roll: `${new Date().getFullYear()}${clsRef.current.value}${
         secRef.current.value
-      }${new Date().getTime()}`.toUpperCase(),
+      }-${new Date().getTime()}`.toUpperCase(),
     };
 
     dispatch({ type: "ADD_STUDENT", payload: newStudent });
