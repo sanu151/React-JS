@@ -2674,3 +2674,83 @@ The `useContext` hook is a built-in React hook that allows you to access the con
 - **Authentication:** Sharing authentication information like user data and tokens.
 - **Language Context:** Managing language preferences.
 
+## React Router: Navigating Your App
+
+**React Router** is a powerful library for building single-page applications (SPAs) with React. It allows you to define routes and components, managing navigation and URL changes.
+
+### Basic Setup
+
+**1. Installation:**
+```bash
+npm install react-router-dom
+```
+
+**2. Import Necessary Components:**
+```javascript
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+```
+
+**3. Define Routes:**
+```javascript
+<BrowserRouter>
+  <Routes>
+    <Route path="/" element={<HomePage />} />
+    <Route path="/about" element={<AboutPage />} />
+    <Route path="/contact" element={<ContactPage />} />
+    {/* ... more routes */}
+  </Routes>
+</BrowserRouter>
+```
+
+**Explanation:**
+
+- **`BrowserRouter`:** Wraps your entire app and provides routing context.
+- **`Routes`:** Defines a collection of routes.
+- **`Route`:** Defines an individual route with a `path` and an `element` to render.
+
+### Example: A Simple Routing App
+
+```javascript
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+function HomePage() {
+  return <h1>Home Page</h1>;
+}
+
+function AboutPage() {
+  return <h1>About Page</h1>;
+}
+
+function ContactPage() {
+  return <h1>Contact Page</h1>;
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+export default App;
+```
+
+**Key Points:**
+
+- **URL Matching:** The `path` prop in `Route` defines the URL pattern to match.
+- **Nested Routes:** You can create nested routes to organize your app's structure.
+- **Dynamic Routes:** Use parameters like `:id` to match dynamic segments in URLs.
+- **Programmatic Navigation:** Use the `useNavigate` hook to navigate programmatically.
+- **Link Component:** Use the `Link` component to create clickable links that trigger navigation.
+
+**Additional Features:**
+
+- **Redirect:** Use the `Navigate` component to redirect users to a specific route.
+- **Params and Query Parameters:** Extract parameters from the URL using the `useParams` hook and query parameters using the `useSearchParams` hook.
+- **Protected Routes:** Use higher-order components or custom hooks to protect routes and require authentication.
+
