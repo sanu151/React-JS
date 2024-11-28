@@ -2816,3 +2816,44 @@ In this example, the `ProtectedRoute` component redirects the user to the `/logi
 - **Navigation State:** You can pass additional state along with the navigation using the `state` property of the `Link` or `useNavigate` hook.
 - **Error Handling:** Consider using error boundaries to handle potential errors during navigation and render appropriate error messages.
 
+### Dynamic routing using useParams
+
+```javascript
+import { useParams } from 'react-router-dom';
+
+function DynamicRoute() {
+  const { id } = useParams();
+
+  return (
+    <div>
+      <h1>User ID: {id}</h1>
+      {/* ... other content based on the user ID */}
+    </div>
+  );
+}
+```
+
+**Explanation:**
+
+1. **Import `useParams`:** Import the `useParams` hook from `react-router-dom`.
+2. **Use the Hook:** Call `useParams()` within your component to get the dynamic parameters from the URL.
+3. **Access Parameters:** The `useParams()` hook returns an object containing key-value pairs, where the keys are the dynamic segments in the URL and the values are the corresponding values.
+4. **Use Parameters in Component:** Use the extracted parameters to render dynamic content or fetch data based on the specific ID.
+
+**Example with Route Configuration:**
+
+```javascript
+<Routes>
+  <Route path="/users/:id" element={<DynamicRoute />} />
+</Routes>
+```
+
+In this example, if you navigate to `/users/123`, the `id` parameter will be `123`, and the `DynamicRoute` component will render the corresponding user information.
+
+**Key Points:**
+
+- **Dynamic Segments:** Use colons (`:`) to define dynamic segments in your route paths.
+- **Parameter Access:** The `useParams` hook extracts these parameters from the URL.
+- **Flexibility:** Dynamic routing allows you to create flexible and user-friendly URLs.
+- **Error Handling:** Consider implementing error handling for cases where the requested ID doesn't exist or is invalid.
+
