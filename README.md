@@ -2915,3 +2915,70 @@ function DynamicRoute() {
 
 In this example, `useParams` is used to extract the `id` parameter from the URL, and `useLocation` is used to access the full URL path.
 
+## Route Parameters and Query Parameters in React Router
+
+### Route Parameters
+Route parameters allow you to create dynamic routes that can capture specific values from the URL. This is useful for building dynamic pages like user profiles, product details, etc.
+
+**Example:**
+
+```javascript
+import { useParams } from 'react-router-dom';
+
+function UserDetail() {
+  const { userId } = useParams();
+
+  // Use the userId to fetch user data from an API or database
+  // and display it on the page
+  return (
+    <div>
+      <h2>User Details for User ID: {userId}</h2>
+      {/* ... other user details */}
+    </div>
+  );
+}
+```
+
+**Route Configuration:**
+
+```javascript
+<Route path="/users/:userId" element={<UserDetail />} />
+```
+
+In this example, the `userId` parameter is captured from the URL and passed to the `UserDetail` component.
+
+### Query Parameters
+
+Query parameters are used to pass additional information to a route. They are appended to the URL after a `?` and separated by `&`.
+
+**Example:**
+
+```javascript
+import { useSearchParams } from 'react-router-dom';
+
+function SearchResults() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const query = searchParams.get('q');
+
+  // Use the query parameter to fetch search results
+  return (
+    <div>
+      <h2>Search Results for: {query}</h2>
+      {/* ... search results */}
+    </div>
+  );
+}
+```
+
+**Route Configuration:**
+
+```javascript
+<Route path="/search" element={<SearchResults />} />
+```
+
+**Accessing Query Parameters:**
+
+- Use the `useSearchParams` hook to get the current search parameters.
+- The hook returns an array: the first element is the current search params object, and the second element is a function to update the search params.
+- The search params object is a `URLSearchParams` object, which provides methods like `get`, `getAll`, and `has` to access and manipulate query parameters.
+
