@@ -3124,7 +3124,7 @@ your-project-name/
 **2. Use a JSON Server:**
    - **Install JSON Server:**
      ```bash
-     npm install -g json-server
+     npm i json-server
      ```
    - **Start the Server:**
      ```bash
