@@ -21,6 +21,7 @@
 | **Display Notification Using react-tostify** | React Toastify is a popular library for displaying simple, customizable notifications in React applications | `npm i react-toastify` | [https://www.npmjs.com/package/react-toastify](https://www.npmjs.com/package/react-toastify) |
 | **Axios** | A promise-based HTTP client for making requests to APIs | `npm install axios` | [https://axios-http.com/](https://www.google.com/url?sa=E&source=gmail&q=https://axios-http.com/) |
 | **JSON Server** | A simple, lightweight JSON API server | `npm i json-server` | [https://www.npmjs.com/package/json-server](https://www.npmjs.com/package/json-server) |
+| **React Helmet** | React Helmet is a popular library for managing document head tags, such as title, meta tags, scripts, and stylesheets, from within your React components. | `npm i helmet` | [https://www.npmjs.com/package/helmet](https://www.npmjs.com/package/helmet) |
 | **Redux** | A state management library for complex applications | `npm install redux react-redux` | [https://redux.js.org/](https://redux.js.org/) |
 | **React Query** | A data fetching and caching library | `npm install @tanstack/react-query` | [https://tanstack.com/query/](https://tanstack.com/query/) |
 | **React Testing Library** | A testing library for React components | `npm install @testing-library/react` | [https://testing-library.com/react/](https://testing-library.com/react/) |
@@ -3200,4 +3201,62 @@ your-project-name/
 - **Asynchronous Operations:** Both Axios and Fetch use asynchronous operations, so you need to handle promises or use async/await.
 - **Data Manipulation:** Once you have the data, you can manipulate it, display it in your UI, or use it for other purposes.
 - **Security:** For production environments, consider using a more robust backend solution with proper security measures.
+
+### Using React Helmet to Manage Page Titles and Meta Tags
+
+React Helmet is a popular library for managing document head tags, such as title, meta tags, scripts, and stylesheets, from within your React components.
+
+**Installation:**
+
+```bash
+npm install react-helmet
+```
+
+**Basic Usage:**
+
+```javascript
+import React from 'react';
+import { Helmet } from 'react-helmet';
+
+function MyComponent() {
+  return (
+    <div>
+      <Helmet>
+        <title>My Website Title</title>
+        <meta name="description" content="This is my website description" />
+      </Helmet>
+      {/* ... other content */}
+    </div>
+  );
+}
+```
+
+**Explanation:**
+
+1. **Import `Helmet`:** Import the `Helmet` component from the `react-helmet` library.
+2. **Wrap Content:** Wrap the desired content in the `Helmet` component.
+3. **Define Metadata:** Use the `title` and `meta` tags within the `Helmet` component to set the page title and meta tags.
+
+**Dynamic Titles:**
+
+You can use JavaScript expressions within the `Helmet` component to dynamically set the title based on the current page or user state:
+
+```javascript
+import { Helmet } from 'react-helmet';
+
+function MyComponent({ title }) {
+  return (
+    <Helmet>
+      <title>{title}</title>
+    </Helmet>
+  );
+}
+```
+
+**Key Points:**
+
+- **SEO:** Proper title and meta tags are crucial for SEO.
+- **User Experience:** Clear and concise titles improve user experience.
+- **Social Media Sharing:** Meta tags can influence how your content is displayed on social media.
+- **Dynamic Titles:** Use JavaScript to create dynamic titles based on the current page or user context.
 
