@@ -3131,6 +3131,11 @@ your-project-name/
      ```bash
      json-server --watch data.json --port 3000
      ```
+     **or**
+     ```bash
+     npx json-server -p 3000 -w database/db.json
+     ```
+     
    - This will start a local server at `http://localhost:3000` serving your JSON data.
 
 **3. Use a Backend Framework:**
