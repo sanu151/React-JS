@@ -21,7 +21,7 @@
 | **Display Notification Using react-tostify** | React Toastify is a popular library for displaying simple, customizable notifications in React applications | `npm i react-toastify` | [https://www.npmjs.com/package/react-toastify](https://www.npmjs.com/package/react-toastify) |
 | **Axios** | A promise-based HTTP client for making requests to APIs | `npm install axios` | [https://axios-http.com/](https://www.google.com/url?sa=E&source=gmail&q=https://axios-http.com/) |
 | **JSON Server** | A simple, lightweight JSON API server | `npm i json-server` | [https://www.npmjs.com/package/json-server](https://www.npmjs.com/package/json-server) |
-| **React Helmet** | React Helmet is a popular library for managing document head tags, such as title, meta tags, scripts, and stylesheets, from within your React components. | `npm i helmet` | [https://www.npmjs.com/package/helmet](https://www.npmjs.com/package/helmet) |
+| **React Helmet** | React Helmet is a popular library for managing document head tags, such as title, meta tags, scripts, and stylesheets, from within your React components. | `npm install react-helmet` | [https://www.npmjs.com/package/helmet](https://www.npmjs.com/package/helmet) |
 | **Redux** | A state management library for complex applications | `npm install redux react-redux` | [https://redux.js.org/](https://redux.js.org/) |
 | **React Query** | A data fetching and caching library | `npm install @tanstack/react-query` | [https://tanstack.com/query/](https://tanstack.com/query/) |
 | **React Testing Library** | A testing library for React components | `npm install @testing-library/react` | [https://testing-library.com/react/](https://testing-library.com/react/) |
