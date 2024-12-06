@@ -3260,3 +3260,51 @@ function MyComponent({ title }) {
 - **Social Media Sharing:** Meta tags can influence how your content is displayed on social media.
 - **Dynamic Titles:** Use JavaScript to create dynamic titles based on the current page or user context.
 
+## React.memo: Optimizing Component Re-renders
+
+**What is React.memo?**
+
+`React.memo` is a higher-order component (HOC) provided by React that can be used to memoize functional components. This means that if the props of a component haven't changed, the component won't re-render, optimizing performance.
+
+**How to Use React.memo:**
+
+```javascript
+import React, { memo } from 'react';
+
+const MyComponent = memo(function MyComponent({ name, age }) {
+  // ... component logic
+});
+```
+
+**When to Use React.memo:**
+
+- **Performance Optimization:** When a component is expensive to render, especially if it's deeply nested or has complex calculations.
+- **Preventing Unnecessary Re-renders:** When a component's rendering logic doesn't depend on props or state changes.
+
+**Key Points:**
+
+- **Shallow Comparison:** `React.memo` uses a shallow comparison to determine if props have changed. If the props are primitive values or references to the same objects, the component won't re-render.
+- **Complex Objects:** For complex objects, you might need to implement custom equality checks or use libraries like `react-memoize` for more granular control over memoization.
+- **Context Changes:** If a component relies on context values, ensure that the context provider is optimized to avoid unnecessary re-renders.
+- **Performance Profiling:** Use React DevTools to identify performance bottlenecks and use `React.memo` strategically.
+
+**Example:**
+
+```javascript
+import React, { memo } from 'react';
+
+const ExpensiveComponent = memo(function ExpensiveComponent({ data }) {
+  // Perform expensive calculations or render complex UI
+  return (
+    <div>
+      {/* ... */}
+    </div>
+  );
+});
+```
+
+By wrapping the `ExpensiveComponent` with `React.memo`, we ensure that it only re-renders when the `data` prop actually changes. This can significantly improve performance, especially in large-scale applications.
+
+**Remember:**
+
+While `React.memo` is a powerful tool, it's important to use it judiciously. Overusing it can lead to unintended consequences, such as preventing necessary re-renders. Always profile your application to identify performance bottlenecks and use `React.memo` strategically.
