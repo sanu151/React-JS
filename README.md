@@ -3366,3 +3366,67 @@ function ChildComponent({ onClick }) {
 
 In this example, the `handleClick` function is memoized, ensuring that it's only created once and passed to the `ChildComponent` consistently. This prevents unnecessary re-renders of the `ChildComponent` when other parts of the state change.
 
+## React.useMemo Hook
+
+The `useMemo` hook in React is used to memoize the result of a calculation or expensive function call. This means that the result will only be recalculated if its dependencies change. This can be useful for optimizing performance, especially in scenarios where the calculation or function call is expensive or the result is used frequently.
+
+**Basic Usage:**
+
+```javascript
+import { useMemo } from 'react';
+
+function MyComponent({ data }) {
+  const expensiveCalculation = useMemo(() => {
+    // Perform expensive calculation here
+    return someExpensiveCalculation(data);
+  }, [data]);
+
+  return (
+    <div>
+      {/* Use the result of expensiveCalculation */}
+      <p>{expensiveCalculation}</p>
+    </div>
+  );
+}
+```
+
+**How it Works:**
+
+1. **Memoization:** The `useMemo` hook memoizes the result of the callback function.
+2. **Dependency Array:** The second argument to `useMemo` is a dependency array. If any of the values in the dependency array change, the callback function will be re-evaluated and the result will be re-memoized.
+3. **Optimized Rendering:** The memoized result is used in the component's render function. If the dependencies haven't changed, the same memoized result will be used, avoiding unnecessary re-calculations.
+
+**When to Use useMemo:**
+
+- **Expensive Calculations:** Memoize the results of computationally expensive calculations.
+- **Complex Data Transformations:** Memoize the results of complex data transformations.
+- **Frequently Used Values:** Memoize values that are used frequently in the component's render function.
+
+**Example:**
+
+```javascript
+import { useMemo } from 'react';
+
+function MyComponent({ items }) {
+  const filteredItems = useMemo(() => {
+    return items.filter(item => item.price > 10);
+  }, [items]);
+
+  return (
+    <div>
+      {filteredItems.map(item => (
+        <div key={item.id}>{item.name}</div>
+      ))}
+    </div>
+  );
+}
+```
+
+In this example, the `filteredItems` array is memoized. It will only be recalculated if the `items` prop changes. This can improve performance, especially if the filtering operation is expensive.
+
+**Important Considerations:**
+
+- **Dependency Array:** The dependency array should be carefully considered. Include only the variables that the calculation depends on.
+- **Performance Profiling:** Use performance profiling tools to identify potential bottlenecks and determine where `useMemo` can be used effectively.
+- **Overuse:** Avoid overusing `useMemo`, as it can sometimes lead to increased complexity and decreased readability.
+
