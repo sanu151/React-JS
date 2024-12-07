@@ -3308,3 +3308,61 @@ By wrapping the `ExpensiveComponent` with `React.memo`, we ensure that it only r
 **Remember:**
 
 While `React.memo` is a powerful tool, it's important to use it judiciously. Overusing it can lead to unintended consequences, such as preventing necessary re-renders. Always profile your application to identify performance bottlenecks and use `React.memo` strategically.
+
+## React.useCallback Hook
+
+The `useCallback` hook in React is used to memoize a callback function. This means that the function will only be recreated if its dependencies change. This can be helpful for optimizing performance in situations where a callback function is passed as a prop to a child component.
+
+**Basic Usage:**
+
+```javascript
+import { useCallback } from 'react';
+
+function MyComponent() {
+  const handleClick = useCallback(() => {
+    // Some expensive operation
+  }, []);
+
+  return (
+    <ChildComponent onClick={handleClick} />
+  );
+}
+```
+
+**How it Works:**
+
+1. **Memoization:** The `useCallback` hook creates a memoized version of the `handleClick` function.
+2. **Dependency Array:** The empty dependency array `[]` ensures that the `handleClick` function is only created once and remains the same throughout the component's lifecycle.
+3. **Optimized Rendering:** The child component will receive the same `handleClick` function reference, preventing unnecessary re-renders.
+
+**When to Use useCallback:**
+
+- **Optimizing Performance:** When passing callback functions as props to child components, especially if those child components are frequently re-rendered.
+- **Preventing Unnecessary Re-renders:** If a callback function triggers expensive operations or side effects, memoizing it can help avoid redundant executions.
+
+**Example:**
+
+```javascript
+import React, { useCallback } from 'react';
+
+function ParentComponent() {
+  const [count, setCount] = useState(0);
+
+  const handleClick = useCallback(() => {
+    setCount(count + 1);
+  }, [count]);
+
+  return (
+    <ChildComponent onClick={handleClick} />
+  );
+}
+
+function ChildComponent({ onClick }) {
+  return (
+    <button onClick={onClick}>Click me</button>
+  );
+}
+```
+
+In this example, the `handleClick` function is memoized, ensuring that it's only created once and passed to the `ChildComponent` consistently. This prevents unnecessary re-renders of the `ChildComponent` when other parts of the state change.
+
